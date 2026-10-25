@@ -3,7 +3,7 @@ import "./App.css";
 function App() {
   return (
     <>
-      <div className="text-8xl">asd</div>
+      <div className="text-8xl font-minecraft">asdss</div>
     </>
   );
 }
