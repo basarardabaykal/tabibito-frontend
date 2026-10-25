@@ -1,9 +1,16 @@
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
+import Layout from "./components/Layout";
+import Homepage from "./pages/Homepage";
 
 function App() {
   return (
     <>
-      <div className="text-8xl font-minecraft">asdss</div>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Homepage />} />
+        </Route>
+      </Routes>
     </>
   );
 }
