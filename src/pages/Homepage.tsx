@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
 import BlogCard from "../components/BlogCard";
 import type { Entry } from "../models/Entry";
-import entryService from "../services/entryService";
+import { readEntries } from "../services/entryService";
 
 function Homepage() {
   const [entries, setEntries] = useState<Entry[]>([]);
 
   useEffect(() => {
     const fetchEntries = async () => {
-      const response = await entryService.readEntries();
+      const response = await readEntries();
       console.log(response);
       setEntries(response.data);
     };
