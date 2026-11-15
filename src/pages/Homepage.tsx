@@ -1,12 +1,24 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import BlogCard from "../components/BlogCard";
+import type { Entry } from "../models/Entry";
+import entryService from "../services/entryService";
 
 function Homepage() {
-  const [contents, setContents] = useState<string[]>(["asds", "asd", "yaaa"]);
+  const [entries, setEntries] = useState<Entry[]>([]);
+
+  useEffect(() => {
+    const fetchEntries = async () => {
+      const response = await entryService.readEntries();
+      console.log(response);
+      setEntries(response.data);
+    };
+    fetchEntries();
+  }, []);
+
   return (
     <div className="p-12 flex flex-col items-center">
-      {contents.map((content) => (
-        <BlogCard content={content}></BlogCard>
+      {entries.map((entry) => (
+        <BlogCard content={entry.content}></BlogCard>
       ))}
     </div>
   );
