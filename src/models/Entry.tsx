@@ -6,3 +6,9 @@ export interface Entry {
   content: string;
   updated_at: string;
 }
+
+export interface NewEntry {
+  title: string;
+  content: string;
+  created_by_id: number;
+}
