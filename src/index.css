@@ -1,5 +1,6 @@
 @import "tailwindcss";
-@import 'pixel-retroui/dist/index.css';
+@plugin "@tailwindcss/typography";
+@import 'pixel-retroui/dist/index.css' layer(base);
 @import 'pixel-retroui/dist/fonts.css';
 
 html,

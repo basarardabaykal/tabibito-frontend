@@ -1,8 +1,8 @@
 export interface Entry {
-  created_by_id: number;
+  created_by_id: string;
   created_at: string;
   title: string;
-  id: number;
+  id: string;
   content: string;
   updated_at: string;
 }
@@ -10,5 +10,5 @@ export interface Entry {
 export interface NewEntry {
   title: string;
   content: string;
-  created_by_id: number;
+  created_by_id: string;
 }

@@ -18,7 +18,7 @@ function Homepage() {
     await createEntry({
       title: newEntryTitle,
       content: newEntryContent,
-      created_by_id: 1,
+      created_by_id: "1",
     });
   };
 
@@ -53,7 +53,11 @@ function Homepage() {
       </Popup>
 
       {entries.map((entry) => (
-        <BlogCard content={entry.content}></BlogCard>
+        <BlogCard
+          id={entry.id}
+          title={entry.title}
+          content={entry.content}
+        ></BlogCard>
       ))}
     </div>
   );
