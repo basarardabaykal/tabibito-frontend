@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Markdown from "react-markdown";
 import { useParams } from "react-router-dom";
 import type { Entry as EntryModel } from "../models/Entry"; // named with alias to avoid collusion
 import { readEntry } from "../services/entryService";
@@ -21,10 +22,12 @@ function Entry() {
   return (
     <>
       {entry ? (
-        <p>{entry.title}</p>
+        <div className="prose mx-auto pt-20">
+          <Markdown>{entry.content}</Markdown>
+        </div>
       ) : (
         <p>
-          <NotFound />
+          <NotFound />x
         </p>
       )}
     </>
